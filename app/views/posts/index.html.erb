@@ -1,0 +1,58 @@
+<p style="color: green"><%= notice %></p>
+
+  
+<h3> Editing Project</h3>
+<br>
+<h4> Project Name:  <input type="text" value="Project 1"><br></h4>
+<br>
+ 
+  <h3>Tasks</h3> 
+
+<table>
+  <h4><button><%= link_to "Add New Task", new_post_path %></button></h4>
+ 
+
+  <thead>
+    <tr>
+      <th>Task Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.task%></td>
+      <td><%= post.description %></td>
+      <td><% link_to "Show", post %></td>
+      <td><% link_to "Edit", edit_post_path(post) %></td>
+      <p>
+       <td><button><%= link_to "Remove Task" , post, method: :delete, data: { confirm: "Are you sure?" } %> </button></td></p>
+  </tr>  
+
+    <% end %>
+  </tbody>
+
+  </table> 
+  <br>
+ <button type="button" class="btn btn-outline-primary">
+<a href="http://127.0.0.1:3000/posts">Update Project</a>
+</button>
+
+<br>
+<p>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    
+    <li class="page-item"><a class="page-link" href="http://127.0.0.1:3000/">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="http://127.0.0.1:3000/tasks">2</a></li>
+    <li class="page-item"><a class="page-link" href="http://127.0.0.1:3000/posts">Next</a></li>
+    
+  </ul>
+</nav>
+
+</p>
+ 
+ 
